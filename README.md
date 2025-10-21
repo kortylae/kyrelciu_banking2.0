@@ -35,7 +35,8 @@ The system allows players to:
 🧠 Full compatibility with the ESX Legacy framework
 🎨 Professional design: animated modals, pulsing balance, green accents, sleek buttons
 
-![Bank UI 1](https://imgur.com/uKonO1o)
-![Bank UI 2](https://imgur.com/VwiK7WX)
-![Bank UI 3](https://imgur.com/t41MBAQ)
+![Bank UI 1](https://i.imgur.com/uKonO1o.png)
+![Bank UI 2](https://i.imgur.com/VwiK7WX.png)
+![Bank UI 3](https://i.imgur.com/t41MBAQ.png)
 ![Bank UI 4](https://i.imgur.com/YCtngZd.png)
+
