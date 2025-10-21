@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KYRELCIU BANKING 2.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="bank-ui" class="bank-dashboard hidden">
+    <div class="sidebar">
+      <div class="brand">
+        <h1><span>KYRELCIU</span>BANK 2.0</h1>
+      </div>
+      <div class="user-card">
+        <div class="avatar" id="user-avatar">👤</div>
+      <div class="user-info">
+        <h3>Właściciel Konta: <span id="account-name">Imię Nazwisko</span></h3>
+        <p>Numer Konta: <span id="account-id">#0000000000</span></p>
+      </div>
+
+      </div>
+
+      <div class="menu">
+        <button onclick="toggleDepositForm()">💰 WPŁATA</button>
+        <button onclick="toggleWithdrawForm()">💸 WYPŁATA</button>
+        <button onclick="toggleTransferForm()">🔁 PRZELEW</button>
+      </div>
+
+      <button class="btn-logout" onclick="closeUI()">⬅ Zamknij</button>
+    </div>
+    <div class="content">
+      <div class="balance-card">
+        <div>
+          <h4>STAN KONTA</h4>
+          <h2 id="account-balance">0 $</h2>
+        </div>
+      </div>
+
+      <div class="transactions">
+        <h2>Historia transakcji</h2>
+        <div id="transactions-list" class="transaction-list">
+          <p>Brak historii transakcji</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id="deposit-form" class="modal">
+  <div class="modal-content">
+    <button class="btn-close" onclick="closeModal('deposit-form')">&times;</button>
+    <h3>Wpłać środki</h3>
+    <p class="description">Aby wpłacić środki, wpisz kwotę i kliknij „Wpłać”</p>
+    <form onsubmit="sendDeposit(event)">
+      <input type="number" id="deposit-amount" placeholder="Kwota" min="1" required>
+      <button type="submit" class="primary-btn">Wpłać</button>
+    </form>
+  </div>
+</div>
+<div id="withdraw-form" class="modal">
+  <div class="modal-content">
+    <button class="btn-close" onclick="closeModal('withdraw-form')">&times;</button>
+    <h3>Wypłać środki</h3>
+    <p class="description">Wybrałeś wypłatę. Wpisz kwotę, aby wypłacić środki z konta</p>
+    <form onsubmit="sendWithdraw(event)">
+      <input type="number" id="withdraw-amount" placeholder="Kwota" min="1" required>
+      <button type="submit" class="primary-btn">Wypłać</button>
+    </form>
+  </div>
+</div>
+<div id="transfer-form" class="modal">
+  <div class="modal-content">
+    <button class="btn-close" onclick="closeModal('transfer-form')">&times;</button>
+    <h3>Przelej środki</h3>
+    <p class="description">Wpisz numer konta odbiorcy i kwotę, aby wysłać przelew</p>
+    <form onsubmit="sendTransfer(event)">
+      <input type="text" id="transfer-to" placeholder="Numer konta odbiorcy" required>
+      <input type="text" id="transferTitle" placeholder="Tytuł przelewu (opcjonalnie)">
+      <input type="number" id="transfer-amount" placeholder="Kwota" min="1" required>
+      <button type="submit" class="primary-btn">Wyślij</button>
+    </form>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
